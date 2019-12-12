@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.GoodsMapper">
+	<select id="getItemList" parameterType="string" resultType="Goods">
+		select * FROM goods
+	</select>
+	<insert id="insertItem" parameterType="Goods">
+		INSERT INTO goods (g_oldPrice,g_selfPrice,g_price,g_title)VALUES(#{g_oldPrice},#{g_selfPrice},#{g_price},#{g_title})
+	</insert>
+</mapper>
