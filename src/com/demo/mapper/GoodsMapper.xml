@@ -9,4 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertItem" parameterType="Goods">
 		INSERT INTO goods (g_oldPrice,g_selfPrice,g_price,g_title)VALUES(#{g_oldPrice},#{g_selfPrice},#{g_price},#{g_title})
 	</insert>
+	<insert id="addItem" parameterType="Items">
+		INSERT INTO goods (g_oldPrice,g_selfPrice,g_price,g_title)VALUES(#{g_oldPrice},#{g_selfPrice},#{g_price},#{g_title})
+	</insert>
 </mapper>

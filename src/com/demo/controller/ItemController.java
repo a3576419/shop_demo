@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.demo.pojo.Goods;
+import com.demo.pojo.Items;
 import com.demo.service.GoodsService;
 
 @Controller
@@ -32,6 +33,12 @@ public class ItemController {
 	public String additem(Model model ,@ModelAttribute Goods goods) {
 		System.out.println("---------------------------"+goods);
 		goodsService.insertItem(goods);
+		return "item";
+	}
+	@RequestMapping("add2")
+	public String additem2(Model model ,@ModelAttribute Items.Item item) {
+		System.out.println("---------------------------"+item);
+		goodsService.addItems(item);
 		return "item";
 	}
 	

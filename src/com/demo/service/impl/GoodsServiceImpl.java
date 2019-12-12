@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.demo.mapper.GoodsMapper;
 import com.demo.pojo.Goods;
+import com.demo.pojo.Items;
 import com.demo.service.GoodsService;
 
 @Service
@@ -25,6 +26,12 @@ public class GoodsServiceImpl implements GoodsService {
 	public void insertItem(Goods goods) {
 		
 		goodsMapper.insertItem(goods);
+	}
+
+	@Override
+	public void addItems(Items.Item item) {
+		
+		goodsMapper.addItem(item);
 	}
 
 }
