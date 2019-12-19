@@ -6,7 +6,7 @@
   *
   */
 
-	public  class Goods {
+	public class Goods {
 		/*g_id          商品id
 		g_oldPrice      原价
 		g_selfPrice     返利
@@ -35,7 +35,13 @@
 		private String g_salesCount;
 		private String g_inventoryNum;
 		private String g_maxSales;
-		public int getG_id() {
+
+
+
+
+
+
+	public int getG_id() {
 			return g_id;
 		}
 		public void setG_id(int g_id) {

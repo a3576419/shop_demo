@@ -9,7 +9,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertItem" parameterType="Goods">
 		INSERT INTO goods (g_oldPrice,g_selfPrice,g_price,g_title)VALUES(#{g_oldPrice},#{g_selfPrice},#{g_price},#{g_title})
 	</insert>
-	<insert id="addItem" parameterType="Items">
-		INSERT INTO goods (g_oldPrice,g_selfPrice,g_price,g_title)VALUES(#{g_oldPrice},#{g_selfPrice},#{g_price},#{g_title})
-	</insert>
+
+	
+	<select id="getItemCount" resultType="int">
+		SELECT COUNT(*) FROM goods
+	</select>
+	<select id="getItemListByPage" parameterType="MyShopBean" resultType="Goods">
+		SELECT
+			g_oldPrice,
+			g_selfPrice,
+			g_price,
+			g_sharePrice,
+			g_title,
+			g_img,
+			g_subtitle,
+			g_status,
+			g_video,
+			g_videoImg,
+			g_salesCount,
+			g_inventoryNum,
+			g_maxSales
+		FROM goods
+ 		LIMIT #{start}, #{itemCount}
+	</select>
+	<select id="getBannerDataList" parameterType="Stores" resultType="BannerDataList">
+		Select * FROM Stores where s_id &gt; 4310 and s_id &lt; 4327
+	</select>
+	<select id="getClassifyDataList" parameterType="Stores" resultType="ClassifyDataList">
+		Select * FROM headdata where g_id &gt; 5 and g_id &lt; 23;
+	</select>
+	<select id="getSingleItem_1_DataList" parameterType="Stores" resultType="SingleItem_1_DataList">
+		Select * FROM Stores where s_id &gt; 4476 and s_id &lt; 4483
+	</select>
+	<select id="getSingleItem_2_DataList" parameterType="Stores" resultType="SingleItem_2_DataList">
+		Select * FROM Stores where s_id > 4516 and s_id &lt; 4533
+	</select>
+	<select id="getUnionClassifyDataList" parameterType="Stores" resultType="UnionClassifyDataList">
+		Select * FROM headdata where g_id &gt; 23 and g_id &lt; 28;
+	</select>
+	<select id="getUnionItemDataList" parameterType="Stores" resultType="UnionItemDataList">
+		Select * FROM Stores where s_id &gt; 4563 and s_id &lt; 4580
+	</select>
 </mapper>
